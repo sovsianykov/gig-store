@@ -1,32 +1,69 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import React from "react";
+import {
+    AppBar,
+    Toolbar,
+    CssBaseline,
+    Typography,
+    useTheme,
+    useMediaQuery,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import DrawerComponent from "./Drawer";
+import {makeStyles} from "@mui/styles";
 
-export default function Navbar() {
+const useStyles = makeStyles((theme) => ({
+    navlinks: {
+        marginLeft: theme.spacing(5),
+        display: "flex",
+    },
+    logo: {
+        flexGrow: "1",
+        cursor: "pointer",
+    },
+    link: {
+        textDecoration: "none",
+        color: "white",
+        fontSize: "20px",
+        marginLeft: theme.spacing(20),
+        "&:hover": {
+            color: "yellow",
+            borderBottom: "1px solid white",
+        },
+    },
+}));
+
+function Navbar() {
+    const classes = useStyles();
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="small"
-                        edge="start"
-                        color="secondary"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        GiG Store
-                    </Typography>
-                    <Button color="secondary">Enter</Button>
-                </Toolbar>
-            </AppBar>
-        </Box>
+        <AppBar position="fixed" style={{background:"brown"}}>
+            <CssBaseline />
+            <Toolbar>
+                <Typography variant="h4" className={classes.logo}>
+                  Diana store
+                </Typography>
+                {isMobile ? (
+                    <DrawerComponent />
+                ) : (
+                    <div className={classes.navlinks}>
+                        <Link to="/" className={classes.link}>
+                            Home
+                        </Link>
+                        <Link to="/scores" className={classes.link}>
+                            Scores
+                        </Link>
+                        <Link to="/lyrics" className={classes.link}>
+                            Lyrics
+                        </Link>
+                        <Link to="/player" className={classes.link}>
+                            Player
+                        </Link>
+                    </div>
+                )}
+            </Toolbar>
+        </AppBar>
     );
 }
+export default Navbar;
