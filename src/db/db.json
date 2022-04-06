@@ -1,0 +1,22 @@
+{
+  "pdf": [
+    {
+      "id": 1,
+      "title": "Purple light",
+      "path": "src/assets/pdf/Purple_light.pdf",
+      "isOnPlayList": false
+    },
+    {
+      "id": 2,
+      "title": "These foolish things",
+      "path": "src/assets/pdf/these-foolish-things.pdf",
+      "isOnPlayList": false
+    },
+    {
+      "id": 3,
+      "title": "I'll be seeing you",
+      "path": "src/assets/pdf/i'll-be-seeing-you.pdf",
+      "isOnPlayList": false
+    }
+  ]
+}

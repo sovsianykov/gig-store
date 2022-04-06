@@ -11,7 +11,7 @@ const useStyles = makeStyles(()=>({
         width: "100%",
         marginTop:theme.spacing(7),
         display:"flex",
-        flexDirection:"column",
+        flexDirection:"row",
         alignItems:"center",
         padding: 0,
 

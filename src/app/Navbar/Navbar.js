@@ -5,7 +5,7 @@ import {
     CssBaseline,
     Typography,
     useTheme,
-    useMediaQuery,
+    useMediaQuery, Container,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
@@ -40,29 +40,31 @@ function Navbar() {
     return (
         <AppBar position="fixed" style={{background:"brown"}}>
             <CssBaseline />
-            <Toolbar>
-                <Typography variant="h4" className={classes.logo}>
-                  Diana store
-                </Typography>
-                {isMobile ? (
-                    <DrawerComponent />
-                ) : (
-                    <div className={classes.navlinks}>
-                        <Link to="/" className={classes.link}>
-                            Home
-                        </Link>
-                        <Link to="/scores" className={classes.link}>
-                            Scores
-                        </Link>
-                        <Link to="/lyrics" className={classes.link}>
-                            Lyrics
-                        </Link>
-                        <Link to="/player" className={classes.link}>
-                            Player
-                        </Link>
-                    </div>
-                )}
-            </Toolbar>
+       <Container sx={{ maxWidth: 1100 }}>
+           <Toolbar>
+               <Typography variant="h4" className={classes.logo}>
+                   Diana store
+               </Typography>
+               {isMobile ? (
+                   <DrawerComponent />
+               ) : (
+                   <div className={classes.navlinks}>
+                       <Link to="/" className={classes.link}>
+                           Home
+                       </Link>
+                       <Link to="/scores" className={classes.link}>
+                           Scores
+                       </Link>
+                       <Link to="/lyrics" className={classes.link}>
+                           Lyrics
+                       </Link>
+                       <Link to="/player" className={classes.link}>
+                           Player
+                       </Link>
+                   </div>
+               )}
+           </Toolbar>
+       </Container>
         </AppBar>
     );
 }
