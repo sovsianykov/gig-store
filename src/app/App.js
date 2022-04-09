@@ -7,8 +7,8 @@ import { Lyrics } from "@mui/icons-material";
 import Player from "./pages/Player/Player";
 import Layout from "./layout/Layout";
 import Footer from "./Footer/Footer";
-import SingleScore from "./pages/SingleScore/SingleScore";
 import { PlayListProvider } from "./Context";
+import Detail from "./pages/Detail/Detail";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/scores" element={<Scores />} />
-            <Route path="/scores/:id" element={<SingleScore />} />
+            <Route path="/scores/:id" element={<Detail/>} />
             <Route path="/lyrics" element={<Lyrics />} />
             <Route path="/player" element={<Player />} />
           </Routes>

@@ -1,9 +1,21 @@
 import React, { useCallback, useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import purpleLight from "../../../../assets/pdf/Purple_light.pdf";
-import { Button, ButtonGroup, Grid } from "@mui/material";
+import { Box, Button, ButtonGroup, Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
-const PdfViewer = () => {
+const useStyles = makeStyles(() => ({
+  root: {
+    width: "100wv",
+    height: "70vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
+}));
+
+const PdfViewer = ({ path }) => {
+  const classes = useStyles();
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -24,23 +36,21 @@ const PdfViewer = () => {
   return (
     <Grid container direction="column" alignItems="center">
       <Grid item xs={12}>
-        <Document file={purpleLight} onLoadSuccess={onDocumentLoadSuccess}>
-          <Page height={600} pageNumber={pageNumber} />
-        </Document>
+        <Box className={classes.root}>
+          <Document file={path} onLoadSuccess={onDocumentLoadSuccess}>
+            <Page height={500} pageNumber={pageNumber} />
+          </Document>
+        </Box>
       </Grid>
       <Grid item xs={12} alignItems="center">
-        <p>
-          {" "}
-          Page {pageNumber} of {numPages}
-        </p>
         <ButtonGroup>
           {pageNumber > 1 && (
-            <Button variant="text" color="inherit" onClick={changePageBack}>
+            <Button variant="text" color="error" onClick={changePageBack}>
               Previous Page{" "}
             </Button>
           )}
           {pageNumber < numPages && (
-            <Button variant="text" color="inherit" onClick={changePageNext}>
+            <Button variant="text" color="error" onClick={changePageNext}>
               Next Page{" "}
             </Button>
           )}

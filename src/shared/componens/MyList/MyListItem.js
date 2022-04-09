@@ -1,18 +1,13 @@
-import React, {memo, useCallback, useState} from "react";
+import React, {memo, useCallback} from "react";
 import ListItemButton from "@mui/material/ListItemButton";
 import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
-import SheetsListItem from "../../../app/Tabs/componens/SheetsListItem";
 import {
-  Addchart,
   AddCircleOutlineOutlined,
-  AddOutlined,
-  AddRounded,
-  AddTask,
-  LibraryMusic,
   RemoveOutlined
 } from "@mui/icons-material";
 import {makeStyles} from "@mui/styles";
-const useStyles = makeStyles((th) =>({
+import {Link} from "react-router-dom";
+const useStyles = makeStyles(() =>({
   root: {
     borderBottom:" 1px solid #CCC",
   },
@@ -41,8 +36,12 @@ const MyListItem = ({ sheet, onClick, add, remove, }) => {
         <ListItemIcon>
           {!sheet.isOnPlayList && add && <AddCircleOutlineOutlined onClick={onClickHandler}  />}
         </ListItemIcon>
-        <ListItemText primary={sheet.title} className={classes.title}  />
+        <Link to={`/scores/${sheet.id}`}>
+          <ListItemText primary={sheet.title} className={classes.title}  />
+        </Link>
+        <ListItemIcon>
         {sheet.isOnPlayList && remove && <RemoveOutlined  onClick={onClickHandler}/>}
+        </ListItemIcon>
       </ListItemButton>
     </ListItem>
   );

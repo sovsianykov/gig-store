@@ -17,6 +17,30 @@
       "title": "I'll be seeing you",
       "path": "src/assets/pdf/i'll-be-seeing-you.pdf",
       "isOnPlayList": false
+    },
+    {
+      "id": 4,
+      "title": "Always and forever",
+      "path": "src/assets/pdf/always_and_forever.pdf",
+      "isOnPlayList": false
+    },
+    {
+      "id": 5,
+      "title": "O mnie si nie martw",
+      "path": "src/assets/pdf/o_mnie_si_nie_martw.pdf",
+      "isOnPlayList": false
+    },
+    {
+      "id": 6,
+      "title": "Pod papugami",
+      "path": "src/assets/pdf/pod_papugami.pdf",
+      "isOnPlayList": false
+    },
+    {
+      "id": 7,
+      "title": "Pogoda Duha",
+      "path": "src/assets/pdf/i'll-be-seeing-you.pdf",
+      "isOnPlayList": false
     }
   ]
 }
