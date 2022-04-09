@@ -43,7 +43,7 @@ function DrawerComponent() {
                 </List>
             </Drawer>
             <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                <MenuOpen style={{color:"#fff"}}/>
+                <MenuOpen style={{color:"#fff", position: "fixed", top: 15 , right: 20}}/>
             </IconButton>
         </>
     );
