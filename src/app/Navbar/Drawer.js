@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import {
+    Button,
     Drawer,
-    IconButton,
     List,
     ListItem,
     ListItemText,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import {MenuOpen} from "@mui/icons-material";
 
 
 
@@ -42,9 +41,9 @@ function DrawerComponent() {
                     </ListItem>
                 </List>
             </Drawer>
-            <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                <MenuOpen style={{color:"#fff", position: "fixed", top: 15 , right: 20}}/>
-            </IconButton>
+            <Button variant='contained' color='error' onClick={() => setOpenDrawer(!openDrawer)}>
+                menu
+            </Button>
         </>
     );
 }
