@@ -10,7 +10,7 @@ const Detail = () => {
   const index = location.pathname.slice(location.pathname.length - 1);
   return (
     <Box display='flex' flexDirection='column'>
-      <PdfViewer path={allSheetPDF[index].path} />
+      <PdfViewer path={allSheetPDF[index-1].path} />
       <Link to={"/scores"}  style={{ alignSelf: "center" }}>
         <Button
           variant="contained"
