@@ -7,22 +7,11 @@ import {
     ListItemText,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import {makeStyles} from "@mui/styles";
 import {MenuOpen} from "@mui/icons-material";
 
-const useStyles = makeStyles(()=>({
-    link:{
-        textDecoration:"none",
-        color: "blue",
-        fontSize: "20px",
-    },
-    icon:{
-        color: "white"
-    }
-}));
+
 
 function DrawerComponent() {
-    const classes = useStyles();
     const [openDrawer, setOpenDrawer] = useState(false);
     return (
         <>

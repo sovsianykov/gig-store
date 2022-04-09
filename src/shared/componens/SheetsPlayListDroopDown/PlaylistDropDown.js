@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
-import { Box, Collapse, Typography } from "@mui/material";
+import React, { useContext } from "react";
+import { Box } from "@mui/material";
 import MyList from "../MyList/MyList";
 import PlayListContext from "../../../app/Context";
 import { makeStyles } from "@mui/styles";
-import theme from "../../../app/constants/theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,9 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PlaylistDropDown = () => {
   const classes = useStyles();
-  const [, setOpen] = useState(false);
-  const [activeItemId, setActiveItemId] = useState(1);
-  const { playList, addToPlayList } = useContext(PlayListContext);
+  const { playList } = useContext(PlayListContext);
   return (
     <Box className={classes.root}>
       <Box className={classes.title}>Playlist</Box>

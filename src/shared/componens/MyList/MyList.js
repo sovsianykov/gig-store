@@ -1,11 +1,10 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { List, Typography } from "@mui/material";
+import { List } from "@mui/material";
 import MyListItem from "./MyListItem";
 import { memo, useCallback, useContext } from "react";
 import PlayListContext from "../../../app/Context";
-import {makeStyles} from "@mui/styles";
-import theme from "../../../app/constants/theme";
+
 
 
 
@@ -13,7 +12,7 @@ import theme from "../../../app/constants/theme";
 
 const MyList = ({ sheetsList, add, remove  }) => {
 
-  const { togglePlayList, playList } = useContext(PlayListContext);
+  const { togglePlayList } = useContext(PlayListContext);
   const onClickHandler = useCallback(
     (sheet) => {
       togglePlayList(sheet);
