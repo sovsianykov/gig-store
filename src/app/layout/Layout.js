@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
   },
   root: {
     width: "100%",
-    marginTop: theme.spacing(7),
+    marginTop: theme.spacing(6),
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
