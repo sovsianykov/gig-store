@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-    Button,
+    Button, CssBaseline,
     Drawer,
     List,
     ListItem,
@@ -18,6 +18,7 @@ function DrawerComponent() {
                 open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
             >
+                <CssBaseline />
                 <List>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>

@@ -5,7 +5,7 @@ import {
     CssBaseline,
     Typography,
     useTheme,
-    useMediaQuery, Container,
+    useMediaQuery,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
@@ -40,7 +40,6 @@ function Navbar() {
     return (
         <AppBar position="fixed" style={{background:"brown"}}>
             <CssBaseline />
-       <Container sx={{ maxWidth: 1100 }}>
            <Toolbar>
                <Typography variant="h4" className={classes.logo}>
                    Diana store
@@ -64,7 +63,6 @@ function Navbar() {
                    </div>
                )}
            </Toolbar>
-       </Container>
         </AppBar>
     );
 }
