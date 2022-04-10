@@ -1,13 +1,17 @@
-import React, {memo, useCallback} from "react";
+import React, {FunctionComponent, memo, useCallback} from "react";
 import ListItemButton from "@mui/material/ListItemButton";
-import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import {ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import {
   AddCircleOutlineOutlined,
   RemoveOutlined
 } from "@mui/icons-material";
 import {makeStyles} from "@mui/styles";
 import {Link} from "react-router-dom";
-const useStyles = makeStyles(() =>({
+import {Sheet} from "../../models";
+
+type StyleProps = { on: boolean}
+
+const useStyles = makeStyles<Pick<StyleProps,'on'>>(() =>({
   root: {
     borderBottom:" 1px solid #CCC",
   },
@@ -15,13 +19,21 @@ const useStyles = makeStyles(() =>({
     fontSize: "20px",
     letterSpacing: "0.1rem",
     fontWeight: 700,
-    color:(props) => props.on ? "brown" : "darkblue",
+    color:(on) => on ? "brown" : "darkblue",
 
   }
 }))
 
+export interface MyListItemProps {
+  sheet: Sheet;
+  onClick: (id: number) => void;
+  add?: boolean;
+  remove?: boolean;
+}
 
-const MyListItem = ({ sheet, onClick, add, remove, }) => {
+
+
+const MyListItem:FunctionComponent<MyListItemProps> = ({ sheet, onClick, add, remove, }) => {
   const props = {
     on: sheet.isOnPlayList
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Grid } from "@mui/material";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,9 +16,9 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs>
-            <a href="mailto:deenababenko@gmai.com" style={{ color: "#FFF" }}>
-              deenababenko@gmai.com
-            </a>
+            <Link to="/scores" style={{ color: "#FFF" }} >
+              scores
+            </Link>
           </Grid>
         </Grid>
       </Container>

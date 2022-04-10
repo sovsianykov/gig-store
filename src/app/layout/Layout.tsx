@@ -1,9 +1,8 @@
-import React from "react";
+import React, {FC} from "react";
 import { makeStyles } from "@mui/styles";
-import { Box, Container } from "@mui/material";
-import theme from "../constants/theme";
+import {Box, Container, Theme} from "@mui/material";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme:Theme) => ({
   container: {
     padding: " 0px!important",
   },
@@ -18,7 +17,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Layout = ({ children }) => {
+export interface LayoutProps {
+  children: JSX.Element | JSX.Element[]
+}
+
+const Layout:FC<LayoutProps> = ({ children }) => {
   const classes = useStyles();
 
   return (

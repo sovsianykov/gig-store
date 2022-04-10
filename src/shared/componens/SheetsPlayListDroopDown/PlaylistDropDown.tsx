@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { Box } from "@mui/material";
+import {Box, Theme} from "@mui/material";
 import MyList from "../MyList/MyList";
 import PlayListContext from "../../../app/Context";
 import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme:Theme) => ({
   root: {
     width: "100%",
     maxWidth: 450,

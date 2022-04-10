@@ -1,5 +1,5 @@
 import purple from './Purple_light.pdf'
-import thesf from './these-foolish-things.pdf'
+import thesf from "./these-foolish-things.pdf"
 import ill from './ill-be-seeing-you.pdf'
 import allways from './always_and_forever.pdf'
 import omnie from './o_mnie_si_nie_martw.pdf'

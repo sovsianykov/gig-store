@@ -5,13 +5,13 @@ import {
     CssBaseline,
     Typography,
     useTheme,
-    useMediaQuery,
+    useMediaQuery, Theme,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
 import {makeStyles} from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme:Theme) => ({
     navlinks: {
         marginLeft: theme.spacing(5),
         display: "flex",
@@ -25,9 +25,11 @@ const useStyles = makeStyles((theme) => ({
         color: "white",
         fontSize: "20px",
         marginLeft: theme.spacing(20),
+        border: "2px solid transparent",
+        transition:"0.15s ease-in-out",
         "&:hover": {
             color: "yellow",
-            borderBottom: "1px solid white",
+            borderBottom: "2px solid yellow",
         },
     },
 }));

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, {FunctionComponent, useCallback, useState} from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import { Box, Button, ButtonGroup, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -14,7 +14,12 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const PdfViewer = ({ path }) => {
+interface Props {
+  path: string
+}
+
+
+const PdfViewer:FunctionComponent<Props> = ({ path }) => {
   const classes = useStyles();
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
@@ -49,7 +54,7 @@ const PdfViewer = ({ path }) => {
               Previous Page{" "}
             </Button>
           )}
-          {pageNumber < numPages && (
+          {pageNumber < numPages! && (
             <Button variant="text" color="error" onClick={changePageNext}>
               Next Page{" "}
             </Button>
