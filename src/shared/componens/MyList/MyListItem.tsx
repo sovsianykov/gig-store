@@ -2,7 +2,7 @@ import React, {FunctionComponent, memo, useCallback} from "react";
 import ListItemButton from "@mui/material/ListItemButton";
 import {ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import {
-  AddCircleOutlineOutlined,
+  PlaylistAddCheck,
   RemoveOutlined
 } from "@mui/icons-material";
 import {makeStyles} from "@mui/styles";
@@ -33,7 +33,7 @@ export interface MyListItemProps {
 
 
 
-const MyListItem:FunctionComponent<MyListItemProps> = ({ sheet, onClick, add, remove, }) => {
+const MyListItem:FunctionComponent<MyListItemProps> = ({ sheet, onClick, add }) => {
   const props = {
     on: sheet.isOnPlayList
   }
@@ -46,14 +46,11 @@ const MyListItem:FunctionComponent<MyListItemProps> = ({ sheet, onClick, add, re
     <ListItem className={classes.root} >
       <ListItemButton >
         <ListItemIcon>
-          {!sheet.isOnPlayList && add && <AddCircleOutlineOutlined onClick={onClickHandler}  />}
+          {!sheet.isOnPlayList && add  ?  <PlaylistAddCheck onClick={onClickHandler}  /> : <RemoveOutlined  onClick={onClickHandler}/> }
         </ListItemIcon>
         <Link to={`/scores/${sheet.id}`}>
           <ListItemText primary={sheet.title} className={classes.title}  />
         </Link>
-        <ListItemIcon>
-        {sheet.isOnPlayList && remove && <RemoveOutlined  onClick={onClickHandler}/>}
-        </ListItemIcon>
       </ListItemButton>
     </ListItem>
   );

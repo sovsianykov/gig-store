@@ -1,15 +1,13 @@
 import React from "react";
-import { Box } from "@mui/material";
 import MyList from "../../../shared/componens/MyList/MyList";
 import allSheets from "../../../db/db.json";
-import PlaylistDropDown from "../../../shared/componens/SheetsPlayListDroopDown/PlaylistDropDown";
+import Page from "../../../shared/componens/Page/Page";
 
 const Scores = () => {
   return (
-    <Box width="100%" bgcolor="white">
+    <Page  title={"scores"}>
       <MyList sheetsList={allSheets.pdf} add  />
-        <PlaylistDropDown />
-    </Box>
+    </Page>
   );
 };
 

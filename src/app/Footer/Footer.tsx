@@ -1,8 +1,16 @@
-import React from "react";
-import { Box, Container, Grid } from "@mui/material";
-import {Link} from "react-router-dom";
+import React, {useCallback} from "react";
+import {Box, Container, Grid, IconButton} from "@mui/material";
+import { useNavigate} from "react-router-dom";
+import {ArrowBackIos, ArrowForwardIos} from "@mui/icons-material";
 
 const Footer = () => {
+  const navigate = useNavigate()
+  const goBack = useCallback(() =>{
+    navigate(-1)
+  },[navigate])
+  const goForward = useCallback(() =>{
+    navigate(1)
+  },[navigate])
   return (
     <Box
       bgcolor="brown"
@@ -15,10 +23,13 @@ const Footer = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs>
-            <Link to="/scores" style={{ color: "#FFF" }} >
-              scores
-            </Link>
+          <Grid item xs={12}>
+            <IconButton style={{ color: "#959494" }} onClick={goBack} >
+              <ArrowBackIos/>
+            </IconButton>
+            <IconButton style={{ color: "#9e9e9e" }} onClick={goForward} >
+              <ArrowForwardIos/>
+            </IconButton>
           </Grid>
         </Grid>
       </Container>

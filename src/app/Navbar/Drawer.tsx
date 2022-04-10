@@ -1,51 +1,56 @@
 import React, { useState } from "react";
 import {
-    Button, CssBaseline,
-    Drawer,
-    List,
-    ListItem,
-    ListItemText,
+  Button,
+  CssBaseline,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-
-
+import {MenuOpen} from "@mui/icons-material";
 
 function DrawerComponent() {
-    const [openDrawer, setOpenDrawer] = useState(false);
-    return (
-        <>
-            <Drawer
-                open={openDrawer}
-                onClose={() => setOpenDrawer(false)}
-            >
-                <CssBaseline />
-                <List>
-                    <ListItem onClick={() => setOpenDrawer(false)}>
-                        <ListItemText>
-                            <Link to="/">Home</Link>
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem onClick={() => setOpenDrawer(false)}>
-                        <ListItemText>
-                            <Link to="/scores">Scores</Link>
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem onClick={() => setOpenDrawer(false)}>
-                        <ListItemText>
-                            <Link to="/lyrics">Lyrics</Link>
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem onClick={() => setOpenDrawer(false)}>
-                        <ListItemText>
-                            <Link to="/player">Player</Link>
-                        </ListItemText>
-                    </ListItem>
-                </List>
-            </Drawer>
-            <Button variant='contained' color='error' onClick={() => setOpenDrawer(!openDrawer)}>
-                menu
-            </Button>
-        </>
-    );
+  const [openDrawer, setOpenDrawer] = useState(false);
+  return (
+    <>
+      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+        <CssBaseline />
+        <List>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/">Home</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/scores">Scores</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/playlist">Playlist</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/lyrics">Lyrics</Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/player">Player</Link>
+            </ListItemText>
+          </ListItem>
+        </List>
+      </Drawer>
+      <Button
+        style={{ background: "transparent", color:"#FFF"}}
+        onClick={() => setOpenDrawer(!openDrawer)}
+      >
+        <MenuOpen/>
+      </Button>
+    </>
+  );
 }
 export default DrawerComponent;

@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme:Theme) => ({
         textDecoration: "none",
         color: "white",
         fontSize: "20px",
+        letterSpacing:"0.1rem",
         marginLeft: theme.spacing(20),
         border: "2px solid transparent",
         transition:"0.15s ease-in-out",
@@ -43,7 +44,7 @@ function Navbar() {
         <AppBar position="fixed" style={{background:"brown"}}>
             <CssBaseline />
            <Toolbar>
-               <Typography variant="h4" className={classes.logo}>
+               <Typography variant="h4" className={classes.logo} fontWeight={3}>
                    Diana store
                </Typography>
                {isMobile ? (
