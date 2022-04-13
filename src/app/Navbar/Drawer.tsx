@@ -8,7 +8,6 @@ import {
   ListItemText,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import {MenuOpen} from "@mui/icons-material";
 
 function DrawerComponent() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -48,7 +47,7 @@ function DrawerComponent() {
         style={{ background: "transparent", color:"#FFF"}}
         onClick={() => setOpenDrawer(!openDrawer)}
       >
-        <MenuOpen/>
+        menu
       </Button>
     </>
   );
